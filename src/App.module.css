@@ -1,0 +1,83 @@
+.App {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 150px;
+  height: 100vh;
+  justify-content: center;
+}
+
+.startButton{
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  background-color: black;
+  color: #fff;
+  font-size: 36px;
+}
+
+.startButton:disabled{
+  cursor: default;
+  background-color: #767373;
+}
+
+.blockWrapper{
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+.targetElement,
+.animatedBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  color: white;
+  font-size: 48px;
+}
+
+
+.animatedBlock{
+  animation: blockMove 5s infinite;
+}
+
+
+.ball{
+  z-index: 100;
+  position: absolute;
+  border-radius: 50%;
+  background-color: chartreuse;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+@keyframes ballMove {
+  0%{
+    display: block;
+  }
+  100%{
+    display: none;
+  }
+}
+
+
+@keyframes blockMove {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(100%);
+  }
+}
+
+
+
